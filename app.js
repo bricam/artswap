@@ -33,7 +33,7 @@ app.use(require('./controllers/'));
 
 const PORT = process.env.PORT || 3000;
 
-models.sequelize.sync().then(() => {
+models.sequelize.sync({force: false}).then(() => {
   app.listen(PORT, () => {
     console.log(`Server is up and running on port ${PORT}`);
   });

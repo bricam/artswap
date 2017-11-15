@@ -27,7 +27,7 @@
     "passport-local": "^1.0.0",
     "pg": "^7.3.0",
     "pg-hstore": "^2.3.2",
-    "sequelize": "^4.20.1",
+    "sequelize": "^4.22.5",
     "speakingurl": "^14.0.1"
   }
 }

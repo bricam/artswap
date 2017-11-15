@@ -19,6 +19,13 @@
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <form name="signup" action="/signup" method="post">
           <div class="row control-group">
+            {{#if errorcode}}
+              {{#each errorcode }}
+                <div class="text-center">
+                <h5 style="color: red">{{this.message}}</h5>
+              {{/each}}
+              </div>
+            {{/if}}
             <div class="form-group col-xs-12 floating-label-form-group controls">
               <label>First Name</label>
               <input type="text" class="form-control" placeholder="First Name" name="firstName" required data-validation-required-message="Please enter your first name.">

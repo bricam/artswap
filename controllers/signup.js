@@ -18,15 +18,17 @@ module.exports = {
     models.User.create({
       firstName: req.body.firstName,
       lastName: req.body.lastName,
-      userName: req.body.username,
-      email: req.body.email,
+      userName: req.body.username.toLowerCase(),
+      email: req.body.email.toLowerCase(),
       password: req.body.password,
     }).then((user) => {
       req.login(user, () =>
         res.redirect('/')
       );
-    }).catch(() => {
-      res.render('signup');
+    }).catch((err) => {
+      //console.log(err);
+      res.render('signup',  {title: 'Join Artswap', errorcode: err.errors ,layout:'noNavigation'});
+      
     });
   },
 };

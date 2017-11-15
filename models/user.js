@@ -9,6 +9,7 @@ module.exports = (sequelize, DataTypes) => {
                 isAlphanumeric: true,
                 notEmpty: true,
             },
+            unique: true,
         },
         firstName: {
             allowNull: false,
@@ -40,6 +41,7 @@ module.exports = (sequelize, DataTypes) => {
             validate:{
                 notEmpty: true,
             },
+            unique: true,
         },
     });
 
