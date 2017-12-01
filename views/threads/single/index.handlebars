@@ -1,43 +1,60 @@
-<head>
-	<!-- bootstrap --> 
+	<div class="container-fluid" style="background-image: url('/img/minimal.jpeg')">
+	<div class="row">
+	<div class="col-md-3"> </div> <!-- centers -->
+    <div class="col-md-6"><br><br><br> <!-- resizes -->
+    
+    <div class="panel panel-default thread" style="border-radius: 12px;">
+    <div class="panel-body">
 
-</head>
+  	<center>
+	<h2> {{ thread.title}}</h2>
+	</center>
 
-<body>
+	<h3>{{ thread.description }}</h3>
 
-	<h1>Title: </h1>
-	{{ thread.title}}
-
+	<strong>Difficulty: </strong>
+		{{ thread.difficulty }}
 	<br>
 
-	<h1>Description: </h1>
-	{{ thread.description }}
+	<strong>Purpose: </strong>
+		{{ thread.purpose }}
 
 	<br>
+	<div class="pull-right">
+		<h5>{{thread.createdAt}}<h5>
+			
 
-	<h1>Difficulty: </h1>
-	{{ thread.difficulty }}
+</div>
+</div>
 
-	<br>
-
-	<h1>Purpose: </h1>
-	{{ thread.purpose }}
-
-	<br>
+	</div>
 
 	<form method="post">
-		<input type="text" name="info">
-			
-		<button type="submit">Submit</button>
+		<textarea name="info" class="form-control" style="height: 100px; background:#F8F8F8;">
+		</textarea>		
+		<button type="submit" class="btn btn-default">Submit</button>
 	</form>
+<br>
+	<div class="col-md-3">       
+	</div>
+	
 
 	{{#each posts}}
 		
-		<div> {{ this.body }} </div>
+		<div class="panel panel-default"> <div class="panel-body"> 
+			
+		{{ this.body }} 
+		<br>
+			<div class="pull-right">
+			<h5>{{this.createdAt}}</h5>
+			</div>
+		</div></div>
 		
 	{{/each}}
 
 
 
 
-</body>
+</div>
+</div>
+</div>
