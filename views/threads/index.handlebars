@@ -1,4 +1,4 @@
-<header class="intro-header" style="background-image: url('img/contact-bg.jpg')">
+<header class="intro-header" style="background-image: url('img/star.jpg');">
 <div class="row">
 	<div class="col-md-3"> </div> <!-- centers -->
     <div class="col-md-6"><br><br><br> <!-- resizes -->
@@ -6,30 +6,32 @@
     <div class="panel-body">
 </header>
 
-<body style="background-image:url('/img/minimal.jpeg')">
+<body style="background-image:url('/img/dust_scratches.png')">
 
-<div class="row no-gutter">
+<div class="row no-gutter" >
   <div class="col-lg-6">
-    <div class="col-height left" >
-      <div class="col-text text">
+    <div class="col-height left"  >
+      <div class="col-text text" >
         <article >
 
-	<div class="row" >
+
+	
+	<div class="row" style="position: fixed; margin-left: 100px; ">
 	<div class="col-md-4 col-md-offset-4" >
 
 	<form name="create-post" action="/thread" method="post">
 
-	<div class="form-group" >
+	<div class="form-group" style="width:200px">
 	<label>Title</label>
 	<input type='text' name='title' class="form-control" placeholder="Post Title">
 	</div>
 
-	<div class="form-group">
+	<div class="form-group" style="width:200px">
 	<label class>Description</label>
 	<!-- <input type='text' name='description' class="form-control" placeholder="Description"> -->
 
 
-		<textarea name="description" class="form-control" style="height: 100px; background:#F8F8F8;">
+		<textarea name="description" class="form-control" style="height: 100px;">
 		</textarea>	
 	<div>
 
@@ -65,10 +67,6 @@
     </div>
   </div>
 
-
-
-
-
 <div class="row no-gutter">
   <div class="col-lg-6">
     <div class="col-height right">
@@ -76,6 +74,7 @@
         <article>
 
 	{{#each threads}}
+
    
 	<div>
 		<!-- assign id to each invidual thread -->
@@ -83,7 +82,8 @@
 		<h2><a href='/thread/{{ this.slug }}'> 
 	        {{this.title}}
 	    </a></h2>
-	    	<small class="text-muted">User Name</small>
+	    	<small class="text-muted">username</small>
+	    	<h5> {{this.Users.userName}} </h5>
 
 	    	<h5>{{this.description}}</h5>
 	    	<div class="pull-right">
