@@ -1,18 +1,42 @@
-<h1>this is post</h1>
+<header class="intro-header" style="background-image: url('img/contact-bg.jpg')">
+<div class="row">
+	<div class="col-md-3"> </div> <!-- centers -->
+    <div class="col-md-6"><br><br><br> <!-- resizes -->
+    
+    <div class="panel-body">
+</header>
 
-<form name="create-post" action="/thread" method="post">
+<body style="background-image:url('/img/minimal.jpeg')">
+
+<div class="row no-gutter">
+  <div class="col-lg-6">
+    <div class="col-height left" >
+      <div class="col-text text">
+        <article >
+
+	<div class="row" >
+	<div class="col-md-4 col-md-offset-4" >
+
+	<form name="create-post" action="/thread" method="post">
+
+	<div class="form-group" >
 	<label>Title</label>
-	<input type='text' name='title'>
+	<input type='text' name='title' class="form-control" placeholder="Post Title">
+	</div>
 
-	<br>
-	
-	<label>Description</label>
-	<input type='text' name='description'>
+	<div class="form-group">
+	<label class>Description</label>
+	<!-- <input type='text' name='description' class="form-control" placeholder="Description"> -->
+
+
+		<textarea name="description" class="form-control" style="height: 100px; background:#F8F8F8;">
+		</textarea>	
+	<div>
 
 	<br>
 
 	<label>Difficulty</label>
-	<select name='difficulty'>
+	<select name='difficulty' class="selectpicker">
 		{{#each difficulties}}
 			<option> {{ this }}</option>
 		{{/each}}
@@ -20,28 +44,60 @@
 	</select>
 	
 	<br>
+	<br>
 
 	<label>Purpose</label>
-	<select name='purpose'>
+	<br>
+	
+	<select name='purpose' class="selectpicker">
 		{{#each purposes}}
 			<option> {{ this }}</option>
 		{{/each}}
 
 	</select>
-
+	<br>
+	<br>
 	<button type='submit'>Submit</button>
+
 </form>
+ </article>
+      </div>
+    </div>
+  </div>
 
 
-{{#each threads}}
+
+
+
+<div class="row no-gutter">
+  <div class="col-lg-6">
+    <div class="col-height right">
+      <div class="col-text text">
+        <article>
+
+	{{#each threads}}
    
 	<div>
 		<!-- assign id to each invidual thread -->
-		<a href='/thread/{{ this.slug }}'> 
+		<div class="panel panel-default" style="width: 90%; border-radius: 10px;"> <div class="panel-body"> 
+		<h2><a href='/thread/{{ this.slug }}'> 
 	        {{this.title}}
-	    </a>
-	    	{{this.description}}
-	</div>
-	    
-    <br>
-{{/each}}
+	    </a></h2>
+	    	<small class="text-muted">User Name</small>
+
+	    	<h5>{{this.description}}</h5>
+	    	<div class="pull-right">
+			<h6>{{this.createdAt}}</h6>
+			</div>
+
+	    </div>
+	</div>	    
+    <br>	
+	{{/each}}
+ </article>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+
