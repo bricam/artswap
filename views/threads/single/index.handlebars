@@ -23,17 +23,23 @@
 	<h1>Purpose: </h1>
 	{{ thread.purpose }}
 
-	<br>
-		<form method="post">
-			<input type="text" name="info">
-				
-			<button type="submit">Submit</button>
-		</form>
-		
+	<form action="/thread/{{thread.id}}" method="post" enctype="multipart/form-data">
+		<div class="file-field input-field">
+			<div class = "btn grey">
+				<span>Image upload here</span>
+				<input type="file" name="uploadImage">
+			</div>
+		</div>
+
+		<input type="text" name="info">
+			
+		<button type="submit">Submit</button>
+	</form>
+	
 	{{#each posts}}
 		
 		<div> {{ this.body }} </div>
-		
+		<img src="{{this.image}}" alt="{{this.image}}" />
 	{{/each}}
 
 
